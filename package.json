@@ -1,0 +1,11 @@
+{
+  "name": "szg",
+  "version": "1.0.0",
+  "dependencies": {
+    "grunt": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-newer": "latest"
+  }
+}
