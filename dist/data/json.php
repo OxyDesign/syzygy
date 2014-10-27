@@ -1,4 +1,5 @@
 <?php
+sleep(1);
 $prd = $_POST['prd'];
 switch ($prd) {
     case "prd1":

@@ -1,3 +1,6 @@
 $(document).ready(function(){
-    //init
+    $('.comparison').compare({
+    	selection:'.comparison-selection',
+    	results:'.comparison-results'
+    });
 });
