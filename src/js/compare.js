@@ -36,11 +36,11 @@
                 self.ajaxUrl = self.elt.data('url');
                 self.selection = self.elt.find(self.opts.selection);
                 self.results = self.elt.find(self.opts.results);
-                self.resultsLi = self.results.find('>li');
+                self.resultsUl = self.results.find('>ul');
                 self.selects = self.selection.find('select');
                 self.options = self.selects.find('option');
                 self.selectsLength = self.selects.length;
-                self.defaultContent = self.resultsLi.eq(0).text();
+                self.defaultContent = self.resultsUl.eq(0).html();
 
                 self.selects.on('change',function(){
                     self.loadProduct($(this));
@@ -51,7 +51,7 @@
                     that = jElt,
                     thatIndex = self.selects.index(that),
                     thatVal = that.val(),
-                    thatLi = self.resultsLi.eq(thatIndex);
+                    thatUl = self.resultsUl.eq(thatIndex);
 
                 if(self.ajaxCalls && self.ajaxCalls['call'+thatIndex]){
                     self.ajaxCalls['call'+thatIndex].abort();
@@ -79,10 +79,10 @@
                     }
                 }
 
-                thatLi.empty();
+                thatUl.empty();
 
                 if(thatVal){
-                    thatLi.addClass('loading');
+                    thatUl.addClass('glyphicon glyphicon-refresh');
                     !self.ajaxCalls && (self.ajaxCalls = {});
                     self.ajaxCalls['call'+thatIndex] = $.ajax({
                         url: self.ajaxUrl,
@@ -92,14 +92,14 @@
                             'prd': thatVal
                         },
                         success: function(data) {
-                            var tpl = '<ul><li><span>Name :</span>'+data.name+'</li><li><span>Price :'+data.price+' €</li><li><span>OS :'+data.os+'</li><li><span>Dimensions :'+data.dimensions.l+'x'+data.dimensions.d+'x'+data.dimensions.w+'</li><li><span>Weight :'+data.weight+'</li><li><span>Transport Weight :'+data.transportWeight+'</li><li><span>Processor :'+data.processor+'</li><li><span>Processor Speed :'+data.processorSpeed+'</li><li><span>RAM :'+data.ram+'</li><li><span>Type Of Storage :'+data.typeOfStorage+'</li><li><span>Capacity :'+data.storageCapacity+'</li></ul>';
-                            thatLi.removeClass('loading').html(tpl);
+                            var tpl = '<li><span>Name :</span> '+data.name+'</li><li><span>Price :</span> '+data.price+' €</li><li><span>OS :</span> '+data.os+'</li><li><span>Dimensions :</span> '+data.dimensions.l+' x '+data.dimensions.d+' x '+data.dimensions.w+' mm</li><li><span>Weight :</span> '+data.weight+' kg</li><li><span>Transport Weight :</span> '+data.transportWeight+' kg</li><li><span>Processor :</span> '+data.processor+'</li><li><span>Processor Speed :</span> '+data.processorSpeed+' GHz</li><li><span>RAM :</span> '+data.ram+' GB</li><li><span>Type Of Storage :</span> '+data.typeOfStorage+'</li><li><span>Capacity :</span> '+data.storageCapacity+' GB</li>';
+                            thatUl.removeClass('glyphicon glyphicon-refresh').html(tpl);
                         },
                         error:function(){
-                            thatLi.removeClass('loading').html('Loading Error');
+                            thatUl.removeClass('glyphicon glyphicon-refresh').html('Loading Error');
                         }
                     });
-                }else{thatLi.text(self.defaultContent)}
+                }else{thatUl.html(self.defaultContent)}
 
             }
         };

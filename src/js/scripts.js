@@ -3,4 +3,8 @@ $(document).ready(function(){
     	selection:'.comparison-selection',
     	results:'.comparison-results'
     });
+
+    $(window).resize(function(){
+    	console.log('resize');
+    });
 });
