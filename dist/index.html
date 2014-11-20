@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Syzygy Comparison Tool</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.min.css" />
@@ -10,81 +11,92 @@
 
 <body>
     <section class="comparison" data-url="data/json.php">
-        <form class="">
+        <form>
             <fieldset>
+                <nav class="col-lg-12">
+                    <ul class="mobile-nav panel panel-primary">
+                        <li class="col-xs-4 panel-heading selected">Select 1</li>
+                        <li class="col-xs-4 panel-heading">Select 2</li>
+                        <li class="col-xs-4 panel-heading">Select 3</li>
+                    </ul>
+                </nav>
+                <nav class="mobile-carousel">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </nav>
                 <ul>
-                <li class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading comparison-selection">
-                            <select name="choice1" id="choice1" class="panel-title">
-                                <option value="">Choose product 1</option>
-                                <option value="prd1">Acer Aspire E1-572</option>
-                                <option value="prd2">Acer Aspire S3-392G</option>
-                                <option value="prd3">Acer Aspire V5-573</option>
-                                <option value="prd4">Acer V5-552</option>
-                                <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
-                                <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
-                                <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
-                                <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
-                            </select>
+                    <li class="col-sm-4">
+                        <div class="panel panel-primary panel-toggle">
+                            <div class="panel-heading comparison-selection">
+                                <select name="choice1" id="choice1" class="panel-title">
+                                    <option value="">Choose product 1</option>
+                                    <option value="prd1">Acer Aspire E1-572</option>
+                                    <option value="prd2">Acer Aspire S3-392G</option>
+                                    <option value="prd3">Acer Aspire V5-573</option>
+                                    <option value="prd4">Acer V5-552</option>
+                                    <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
+                                    <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
+                                    <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
+                                    <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
+                                </select>
+                            </div>
+                            <div class="panel-body comparison-results">
+                                <ul>
+                                    <li class="default-value">
+                                        Select a product to compare
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="panel-body comparison-results">
-                            <ul>
-                                <li class="default-value">
-                                    Select a product to compare
-                                </li>
-                            </ul>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="panel panel-primary panel-toggle">
+                            <div class="panel-heading comparison-selection">
+                                <select name="choice2" id="choice2" class="panel-title">
+                                    <option value="">Choose product 2</option>
+                                    <option value="prd1">Acer Aspire E1-572</option>
+                                    <option value="prd2">Acer Aspire S3-392G</option>
+                                    <option value="prd3">Acer Aspire V5-573</option>
+                                    <option value="prd4">Acer V5-552</option>
+                                    <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
+                                    <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
+                                    <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
+                                    <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
+                                </select>
+                            </div>
+                            <div class="panel-body comparison-results">
+                                <ul>
+                                    <li class="default-value">
+                                        Select a product to compare
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading comparison-selection">
-                            <select name="choice2" id="choice2" class="panel-title">
-                                <option value="">Choose product 2</option>
-                                <option value="prd1">Acer Aspire E1-572</option>
-                                <option value="prd2">Acer Aspire S3-392G</option>
-                                <option value="prd3">Acer Aspire V5-573</option>
-                                <option value="prd4">Acer V5-552</option>
-                                <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
-                                <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
-                                <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
-                                <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
-                            </select>
+                    </li>
+                    <li class="col-sm-4">
+                        <div class="panel panel-primary panel-toggle">
+                            <div class="panel-heading comparison-selection">
+                                <select name="choice3" id="choice3" class="panel-title">
+                                    <option value="">Choose product 3</option>
+                                    <option value="prd1">Acer Aspire E1-572</option>
+                                    <option value="prd2">Acer Aspire S3-392G</option>
+                                    <option value="prd3">Acer Aspire V5-573</option>
+                                    <option value="prd4">Acer V5-552</option>
+                                    <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
+                                    <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
+                                    <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
+                                    <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
+                                </select>
+                            </div>
+                            <div class="panel-body comparison-results">
+                                <ul>
+                                    <li class="default-value">
+                                        Select a product to compare
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="panel-body comparison-results">
-                            <ul>
-                                <li class="default-value">
-                                    Select a product to compare
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading comparison-selection">
-                            <select name="choice3" id="choice3" class="panel-title">
-                                <option value="">Choose product 3</option>
-                                <option value="prd1">Acer Aspire E1-572</option>
-                                <option value="prd2">Acer Aspire S3-392G</option>
-                                <option value="prd3">Acer Aspire V5-573</option>
-                                <option value="prd4">Acer V5-552</option>
-                                <option value="prd5">Apple MacBook Air 11-inch (2013)</option>
-                                <option value="prd6">Apple MacBook Air 13-inch (2013)</option>
-                                <option value="prd7">Apple Macbook Pro Retina 13-inch (2013)</option>
-                                <option value="prd8">Apple Macbook Pro Retina 15-inch (2013)</option>
-                            </select>
-                        </div>
-                        <div class="panel-body comparison-results">
-                            <ul>
-                                <li class="default-value">
-                                    Select a product to compare
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+                    </li>
                 </ul>
             </fieldset>
         </form>
